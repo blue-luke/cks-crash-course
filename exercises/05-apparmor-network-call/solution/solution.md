@@ -12,24 +12,6 @@ PING google.com (172.217.18.110): 56 data bytes
 round-trip min/avg/max/stddev = 31.155/31.155/31.155/0.000 ms
 ```
 
-Create the AppArmor profile at `/etc/apparmor.d/network-deny` using the command `sudo vim /etc/apparmor.d/network-deny`. The contents of the file could look as follows.
-
-```
-#include <tunables/global>
-
-profile network-deny flags=(attach_disconnected) {
-  #include <abstractions/base>
-
-  network,
-}
-```
-
-Enforce the AppArmor profile by running the following command.
-
-```
-$ sudo apparmor_parser /etc/apparmor.d/network-deny
-```
-
 You cannot modify the existing Pod object in order to add the annotation for AppArmor. You will need to delete the object first. Write the definition of the Pod to a file.
 
 ```

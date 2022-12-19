@@ -11,3 +11,5 @@ kubectl
 kubectl.sha256
 kubelet
 kubelet.sha256
+exercises/02-tls-ingress/accounting.crt
+exercises/02-tls-ingress/accounting.key

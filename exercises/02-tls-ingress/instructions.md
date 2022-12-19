@@ -16,3 +16,16 @@ Created the ingress using additional docs
 4. Create an Ingress named `accounting-ingress` in the namespace `t75`. Assign the Secret from the previous step to the host `accounting.internal.acme.com`. The Ingress is supposed to the route traffic to the Sevice named `accounting-service` on port 80 for the path `/accounting` of type `Prefix`.
   I was better able to parse and understand the kubectl command reference documents this time
   I didn't get the correct path, so had to add that in having checked the answer. Seems broadly okay though
+
+
+There are several reasons why you might want to use an ingress in Kubernetes:
+
+Load balancing: An ingress can distribute incoming traffic across multiple replicas of a service, providing load balancing and improving the availability of the service.
+
+SSL/TLS termination: An ingress can terminate SSL/TLS connections, allowing the service to receive traffic over a secure connection without having to implement SSL/TLS termination itself.
+
+Host and path-based routing: An ingress can route traffic based on the hostname or path of the request, allowing you to expose multiple services on the same IP address and DNS name.
+
+Name-based virtual hosting: An ingress can route traffic based on the hostname of the request, allowing you to expose multiple services on the same IP address and DNS name using name-based virtual hosting.
+
+While you could potentially use a cluster IP to expose a service to the outside world, an ingress provides additional features and flexibility that may not be available with a cluster IP alone.

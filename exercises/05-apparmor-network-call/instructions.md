@@ -22,8 +22,8 @@ profile network-deny flags=(attach_disconnected) {
 ```
 
 4. Add the profile to the set of rules in enforce mode.
-  Not sure where to specify enforce or complain
-5. Apply the profile to the Pod named `network-call` running in the `default` namespace.
+  Not sure where to specify enforce or complain. Perhaps ''' profile network-deny flags=(complain) 
+5. Apply the profile to the Pod named `network-call` running in the `default` namespace. 
   Fine, see k8s docs
 6. Check the logs of the Pod to ensure that network calls cannot be made anymore.
   Ping, should be fine

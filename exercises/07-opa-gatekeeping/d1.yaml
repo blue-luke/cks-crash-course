@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: d1
+  name: d1
+  annotations:
+    contact: "true"
+    commit-hash: "9847"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: d1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: d1
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

@@ -1,0 +1,11 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredAnnotations
+metadata:
+  name: ns-must-have-hr
+spec:
+  match:
+    kinds:
+      - apiGroups: ["Apps"]
+        kinds: ["Deployment"]
+  parameters:
+    annotations: ["contact", "commit-hash"]
